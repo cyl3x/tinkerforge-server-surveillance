@@ -1,6 +1,7 @@
 "use strict";
 
-import { IPConnection } from 'tinkerforge'
+import Tinkerforge from 'tinkerforge'
 
 
-let connection = new IPConnection();
+const con = new Tinkerforge.IPConnection();
+con.connect('localhost', 4223, console.error);
