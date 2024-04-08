@@ -3,7 +3,7 @@ import { IP } from './consts.js';
 
 let ipcon = null;
 
-export function getIPcon() {
+export async function getIPcon() {
     if (ipcon) return ipcon;
 
     ipcon = new Tinkerforge.IPConnection();
@@ -16,5 +16,10 @@ export function getIPcon() {
         });
     });
 
-    return ipcon;
+    return new Promise((resolve) => {
+        ipcon.on(
+            Tinkerforge.IPConnection.CALLBACK_CONNECTED,
+            () => resolve(ipcon),
+        );
+    });
 };

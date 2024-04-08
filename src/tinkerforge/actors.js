@@ -4,12 +4,14 @@ import { getIPcon } from './connection.js';
 
 const actors = {};
 
-export function getActor(name) {
+export async function getActor(name) {
     if (actors[name]) return actors[name];
     
+    const ipcon = await getIPcon();
+
     switch (name) {
-        case PIEZO:
-            return actors[name] = new Tinkerforge.BrickletPiezoSpeakerV2(Actors.PIEZO, getIPcon());
+        case 'PIEZO':
+            return actors[name] = new Tinkerforge.BrickletPiezoSpeakerV2(Actors.PIEZO, ipcon);
     
         default:
             throw new Error(`Actor ${name} not found`);
