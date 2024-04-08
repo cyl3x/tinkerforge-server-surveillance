@@ -1,3 +1,5 @@
+export const IP = '172.20.10.242';
+
 export const Sensors = {
   TEMPERATURE: "Wcg",
   BRIGHTNESS: "Pdw",
