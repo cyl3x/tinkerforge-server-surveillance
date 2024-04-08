@@ -1,15 +1,15 @@
 import { trigger } from './index.js';
 
 /**
- * @param {number|string} value 
+ * @param {boolean} value 
  */
 function detect(value) {
     return trigger(
         'Movement was detected!',
-        `detection after permited Time - SOMTHING IS CRAWLING IN THE DARK`,
+        `Detection after permited Time - SOMETHING IS CRAWLING IN THE DARK`,
         [{
             name: "Movement",
-            value: `${value}°C`,
+            value: `${value}`,
         }]
     );
 }
