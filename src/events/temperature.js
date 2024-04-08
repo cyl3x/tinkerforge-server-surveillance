@@ -1,17 +1,12 @@
 import { BrickletTemperature } from "tinkerforge";
-import { Sensors } from "../tinkerforge/consts.js";
-import { getIPcon } from "../tinkerforge/connection.js";
+import { getSensor } from "../tinkerforge/sensors.js";
 import actions from '../actions/webhook/index.js';
 
 const min = 10;
 const max = 30; 
-var temperature = new BrickletTemperature(Sensors.TEMPERATURE, getIPcon())
-
-temperature.getTemperatureCallbackThreshold(min, max);
-temperature.setI2CMode(1);
 
 function check() {
-    const temp = temperature.getTemperature();
+    const temp = getSensor('TEMPERATURE').getTemperature();
 
     if (temp < min) {
         actions.temperature.low(temp);
