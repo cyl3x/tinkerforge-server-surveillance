@@ -7,5 +7,5 @@ const ipcon = getIPcon();
 const ps = new Tinkerforge.BrickletPiezoSpeakerV2(Actors.PIEZO, ipcon);
 
 ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED, () => {
-  ps.setAlarm(800, 2000, 10, 1, 1, 1000);
+  //ps.setAlarm(800, 2000, 10, 1, 1, 1000);
 });
