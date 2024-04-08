@@ -1,22 +1,27 @@
-import Tinkerforge from 'tinkerforge';
-import { Actors, Sensors } from './consts.js';
+import Tinkerforge from "tinkerforge";
+import { Actors, Sensors } from "./consts.js";
 
 const ipcon = new Tinkerforge.IPConnection();
-ipcon.connect('172.20.10.242', 4223, console.error);
+ipcon.connect("172.20.10.242", 4223, console.error);
 
-[`exit`, `SIGINT`, `SIGUSR1`, `SIGUSR2`, `uncaughtException`, `SIGTERM`].forEach((e) => {
-    process.on(e, () => {
-        console.log("closing connection ...");
-        ipcon.disconnect();
-    });
-})
-
+[
+  `exit`,
+  `SIGINT`,
+  `SIGUSR1`,
+  `SIGUSR2`,
+  `uncaughtException`,
+  `SIGTERM`,
+].forEach((e) => {
+  process.on(e, () => {
+    console.log("closing connection ...");
+    ipcon.disconnect();
+  });
+});
 
 const ps = new Tinkerforge.BrickletPiezoSpeakerV2(Actors.PIEZO, ipcon);
 
 ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED, () => {
-
-    ps.setAlarm(800, 2000, 10, 1, 1, 1000);
+  ps.setAlarm(800, 2000, 10, 1, 1, 1000);
 });
 
 // // Register Enumerate Callback
