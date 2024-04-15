@@ -2,12 +2,13 @@ import Tinkerforge from 'tinkerforge';
 import { ipcon } from './connection.js';
 
 export const sensors = {
-  temperature: new Tinkerforge.BrickletTemperatureV2("Wcg", ipcon),
-  brightness: new Tinkerforge.BrickletAmbientLightV2("Pdw", ipcon),
+  temperature: new Tinkerforge.BrickletPTCV2("Wcg", ipcon),
+  brightness: new Tinkerforge.BrickletAmbientLightV3("Pdw", ipcon),
   humidity: new Tinkerforge.BrickletHumidityV2("ViW", ipcon),
   motion: new Tinkerforge.BrickletMotionDetectorV2("ML4", ipcon),
-  rgb_button: new Tinkerforge.BrickletRGBLEDButton("XBe", ipcon),
-  dual_button: new Tinkerforge.BrickletDualButtonV2("23Qx", ipcon),
+  // Wrong id's for the moment
+  // rgb_button: new Tinkerforge.BrickletRGBLEDButton("XBe", ipcon),
+  // dual_button: new Tinkerforge.BrickletDualButtonV2("23Qx", ipcon),
   nfc_scanner: new Tinkerforge.BrickletNFC("22ND", ipcon),
 };
 
