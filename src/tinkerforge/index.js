@@ -1,0 +1,19 @@
+import Tinkerforge from 'tinkerforge';
+import { ipcon } from './connection.js';
+
+export const sensors = {
+  temperature: new Tinkerforge.BrickletTemperatureV2("Wcg", ipcon),
+  brightness: new Tinkerforge.BrickletAmbientLightV2("Pdw", ipcon),
+  humidity: new Tinkerforge.BrickletHumidityV2("ViW", ipcon),
+  motion: new Tinkerforge.BrickletMotionDetectorV2("ML4", ipcon),
+  rgb_button: new Tinkerforge.BrickletRGBLEDButton("XBe", ipcon),
+  dual_button: new Tinkerforge.BrickletDualButtonV2("23Qx", ipcon),
+  nfc_scanner: new Tinkerforge.BrickletNFC("22ND", ipcon),
+};
+
+export const actors = {
+  piezo: new Tinkerforge.BrickletPiezoSpeakerV2("R7M", ipcon),
+  epaper: new Tinkerforge.BrickletEPaper296x128("XGL", ipcon),
+  seg_display: new Tinkerforge.BrickletSegmentDisplay4x7V2("Tre", ipcon),
+  lcd_display: new Tinkerforge.BrickletLCD128x64("24Rh", ipcon),
+};

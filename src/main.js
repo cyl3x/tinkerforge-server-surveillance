@@ -1,5 +1,5 @@
-import events from './events';
+import events from './events/index.js';
 
 while (true) {
-  events.temperature.check();
+  // events.temperature.check();
 }

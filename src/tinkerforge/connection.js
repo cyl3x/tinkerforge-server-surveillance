@@ -1,17 +1,16 @@
 import Tinkerforge from 'tinkerforge';
-import { IP } from './consts.js';
 
-let ipcon = null;
+const IP = '172.20.10.242';
 
-export async function getIPcon() {
-    if (ipcon) return ipcon;
-
-    ipcon = new Tinkerforge.IPConnection();
-    ipcon.connect(IP, 4223, console.error);
+function createIPcon() {
+    const ipcon = new Tinkerforge.IPConnection();
+    ipcon.connect(IP, 4223, (error) => console.error(`Could not connect to ${IP}:4223, code ${error}`));
 
     [`exit`, `SIGINT`, `SIGUSR1`, `SIGUSR2`, `uncaughtException`, `SIGTERM`].forEach((e) => {
         process.on(e, () => {
-            console.log("closing connection ...");
+            if (!ipcon.isConnected) return;
+
+            console.log("Closing connection ...");
             ipcon.disconnect();
         });
     });
@@ -23,3 +22,5 @@ export async function getIPcon() {
         );
     });
 };
+
+export const ipcon = await createIPcon();
