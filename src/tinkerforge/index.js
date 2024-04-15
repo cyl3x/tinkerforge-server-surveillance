@@ -6,9 +6,8 @@ export const sensors = {
   brightness: new Tinkerforge.BrickletAmbientLightV3("Pdw", ipcon),
   humidity: new Tinkerforge.BrickletHumidityV2("ViW", ipcon),
   motion: new Tinkerforge.BrickletMotionDetectorV2("ML4", ipcon),
-  // Wrong id's for the moment
-  // rgb_button: new Tinkerforge.BrickletRGBLEDButton("XBe", ipcon),
-  // dual_button: new Tinkerforge.BrickletDualButtonV2("23Qx", ipcon),
+  rgb_button: new Tinkerforge.BrickletRGBLEDButton("23Qx", ipcon),
+  dual_button: new Tinkerforge.BrickletDualButtonV2("Vd8", ipcon),
   nfc_scanner: new Tinkerforge.BrickletNFC("22ND", ipcon),
 };
 
