@@ -6,11 +6,11 @@ function createIPcon() {
     const ipcon = new Tinkerforge.IPConnection();
     ipcon.connect(IP, 4223, (error) => console.error(`Could not connect to ${IP}:4223, code ${error}`));
 
-    [`exit`, `SIGINT`, `SIGUSR1`, `SIGUSR2`, `uncaughtException`, `SIGTERM`].forEach((e) => {
+    ['exit', 'SIGINT', 'SIGUSR1', 'SIGUSR2', 'SIGTERM'].forEach((e) => {
         process.on(e, () => {
             if (!ipcon.isConnected) return;
 
-            console.log("Closing connection ...");
+            console.log(`[${e}] Closing connection ...`);
             ipcon.disconnect();
         });
     });

@@ -1,17 +1,14 @@
 import { actors } from '../tinkerforge/index.js';
+import emitter from '../emitter.js';
 
-let currentTemp = getSensor('TEMPERATURE').getTemperature();
+emitter.on(
+    'temperature',
+    (temp) => {
+        const digits = temp
+            .toString()
+            .split("")
+            .map(Number);
 
-function splitNumberIntoDigits(number) {
-    return number
-        .toString()
-        .split("")
-        .map(Number);
-}
-
-const digits = splitNumberIntoDigits(currentTemp);
-
-
-while(true){
-    actors.seg_display.setNumericValue([digits[0], digits[1], 34, 12]);
-}
+        actors.seg_display.setNumericValue([...digits, 34, 12]);
+    }
+)

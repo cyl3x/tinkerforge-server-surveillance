@@ -1,5 +1,2 @@
-import temperature from './temperature.js'
-
-export default {
-    temperature,
-}
+import './display_seg.js'
+import './temperature.js'
