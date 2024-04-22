@@ -21,3 +21,9 @@ sensors.humidity.on(
   emitter.emit.bind(emitter, "humidity"),
   emitter.emit.bind(emitter, "callback_error")
 );
+
+sensors.nfc_scanner.on(
+    Tinkerforge.BrickletNFC.CALLBACK_READER_STATE_CHANGED,
+    emitter.emit.bind(emitter, 'nfc_state_changed'),
+    emitter.emit.bind(emitter, 'callback_error'),
+);

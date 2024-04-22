@@ -1,3 +1,4 @@
+import alarm from './alarm.js';
 import temperature from './temperature.js';
 import humidity from './humidity.js';
 
@@ -45,6 +46,7 @@ export async function trigger(title, description, fields) {
  */
 
 export default {
+    alarm,
     humidity,
     temperature,
 }
