@@ -9,6 +9,8 @@ const URL = 'https://discord.com/api/webhooks'
  * @param {array<{ name: string, value: string }>} fields
  */
 export async function trigger(title, description, fields) {
+    console.log(`Triggered webhook: ${title} - ${description}`);
+
     const body = {
         embeds: [{
             title,
