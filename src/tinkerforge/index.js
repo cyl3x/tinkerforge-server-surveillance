@@ -1,5 +1,5 @@
-import Tinkerforge from 'tinkerforge';
-import { ipcon } from './connection.js';
+import Tinkerforge from "tinkerforge";
+import { ipcon } from "./connection.js";
 
 export const sensors = {
   temperature: new Tinkerforge.BrickletPTCV2("Wcg", ipcon),
