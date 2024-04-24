@@ -1,4 +1,4 @@
-import { trigger } from './index.js';
+import { COLOR, trigger } from './index.js';
 
 /**
  * @param {number|string} value 
@@ -14,4 +14,19 @@ function high(value) {
     );
 }
 
-export default { high };
+/**
+ * @param {number|string} value 
+ */
+function normalized(value) {
+    return trigger(
+        'Humidity normalized!',
+        `Is below 65% again - IT'S FINE NOW`,
+        [{
+            name: "Humidity",
+            value: `${value}°C`,
+        }],
+        COLOR.GREEN,
+    );
+}
+
+export default { high, normalized };

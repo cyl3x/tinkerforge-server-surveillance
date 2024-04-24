@@ -2,12 +2,25 @@ import { trigger } from './index.js';
 
 /**
  * @param {number|string} value
- * @param {number|string} max 
  */
-function high(value, max = 30) {
+function high(value) {
     return trigger(
         'Temperature is rising!',
-        `Is above ${max}°C - IT'S HOT IN HERE`,
+        `Is above 30°C - IT'S HOT IN HERE`,
+        [{
+            name: "Temperature",
+            value: `${value}°C`,
+        }]
+    );
+}
+
+/**
+ * @param {number|string} value
+ */
+function low(value) {
+    return trigger(
+        'Temperature is falling!',
+        `Is below 10°C - IT'S COLD IN HERE`,
         [{
             name: "Temperature",
             value: `${value}°C`,
@@ -19,10 +32,10 @@ function high(value, max = 30) {
  * @param {number|string} value
  * @param {number|string} min
  */
-function low(value, min = 10) {
+function normalized(value) {
     return trigger(
-        'Temperature is falling!',
-        `Is below ${min}°C - IT'S COLD IN HERE`,
+        'Temperature is normal again!',
+        `Is between 10°C and 30°C - IT'S FINE NOW`,
         [{
             name: "Temperature",
             value: `${value}°C`,
@@ -30,4 +43,4 @@ function low(value, min = 10) {
     );
 }
 
-export default { high, low }
+export default { high, low, normalized }

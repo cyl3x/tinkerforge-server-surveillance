@@ -2,6 +2,11 @@ import alarm from './alarm.js';
 import temperature from './temperature.js';
 import humidity from './humidity.js';
 
+export const COLOR = {
+    RED: 15409955,
+    GREEN: 48640,
+};
+
 const URL = 'https://discord.com/api/webhooks'
 
 /**
@@ -9,14 +14,14 @@ const URL = 'https://discord.com/api/webhooks'
  * @param {string} description why the incident was triggered (e.g. Temperature above 30°C)
  * @param {array<{ name: string, value: string }>} fields
  */
-export async function trigger(title, description, fields) {
+export async function trigger(title, description, fields, color = COLOR.RED) {
     console.log(`Triggered webhook: ${title} - ${description}`);
 
     const body = {
         embeds: [{
             title,
             description,
-            color: 15409955,
+            color,
             fields,
         }],
     }
