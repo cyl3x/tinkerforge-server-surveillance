@@ -1,64 +1,47 @@
 import Tinkerforge from 'tinkerforge';
-import { actors } from '../tinkerforge/index.js';
+import { actors, sensors } from '../tinkerforge/index.js';
 import webhook from '../actions/webhook/index.js';
 import emitter from '../emitter.js';
 
-const piezoCfg = {
-    durationMs: 1000,
-    volume: 1,
+const workers = {
+    b7944dc7: 'The Church',
 }
 
-emitter.on('alarm_on', () => {
+emitter.on('alarm_on', (reason, epaper_message) => {
     if (emitter.listeners('nfc_state_changed').includes(nfc_reader))
         return void console.log('Alarm is already running!');
 
-    webhook.alarm.on();
+    webhook.alarm.on(reason ?? 'Unknown');
 
+    sensors.nfc_scanner.setMode(Tinkerforge.BrickletNFC.MODE_READER);
     emitter.on('nfc_state_changed', nfc_reader);
-    actors.piezo.setAlarm(800, 2000, 10, 1, piezoCfg.volume, piezoCfg.durationMs);
+    actors.piezo.setAlarm(800, 2000, 10, 1, /* volume */ 1, 4294967295);
 });
 
-emitter.on('alarm_off', () => {
-    if (!emitter.listeners('nfc_state_changed').includes(nfc_reader))
-        return void console.log('Alarm is already off!');
+emitter.on('alarm_off', (username) => {
+    if (!emitter.listeners('nfc_state_changed').includes(nfc_reader)) {
+        actors.piezo.setAlarm(800, 2000, 10, 1, /* volume */ 1, 0);
+        console.log('Alarm is already off!');
 
-    webhook.alarm.off();
+        return;
+    };
+
+    webhook.alarm.off(username);
 
     emitter.off('nfc_state_changed', nfc_reader);
-    // actors.piezo.setAlarm(800, 2000, 10, 1, piezoCfg.volume, piezoCfg.durationMs);
+    actors.piezo.setAlarm(800, 2000, 10, 1, /* volume */ 1, 0);
 });
 
-function nfc_reader(nfc_readerstate, idle) {
-    if (idle) {
-        console.log('idling ...');
-        return void nfc.readerRequestTagID();
+function nfc_reader(state, idle) {
+    if(state === Tinkerforge.BrickletNFC.READER_STATE_REQUEST_TAG_ID_READY) {
+        sensors.nfc_scanner.readerGetTagID(
+            (tagType, tagID) => {
+                const tag = tagID.reduce((acc, id) => acc + id.toString(16), '');
+                if (tag in workers) emitter.emit('alarm_off', workers[tag]);
+            },
+            console.error.bind('Error while reading nfc tag: '),
+        );
     }
 
-    if(state != Tinkerforge.BrickletNFC.READER_STATE_REQUEST_TAG_ID_READY) {
-        return;
-    }
-
-
-    nfc.readerGetTagID(
-        (tagType, tagID) => {
-            var tagInfo = '';
-
-            for (var i = 0; i < tagID.length; i++) {
-                tagInfo += '0x' + ('0' + tagID[i].toString(16).toUpperCase()).substr(-2);
-
-                if (i < tagID.length - 1) {
-                    tagInfo += ' ';
-                }
-            }
-
-            console.log('Found tag of type %d with ID [%s]', tagType, tagInfo);
-            emitter.emit('alarm_off');
-        },
-        console.error.bind('Error while reading nfc tag: '),
-    );
+    if (idle) sensors.nfc_scanner.readerRequestTagID();
 };
-
-function off() {
-    // disable
-    // piezo.setAlarm(800, 2000, 10, 1, piezoCfg.volume, piezoCfg.durationMs);
-}
