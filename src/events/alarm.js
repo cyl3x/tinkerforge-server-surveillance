@@ -2,10 +2,7 @@ import Tinkerforge from 'tinkerforge';
 import { actors, sensors } from '../tinkerforge/index.js';
 import webhook from '../actions/webhook/index.js';
 import emitter from '../emitter.js';
-
-const workers = {
-    b7944dc7: 'The Church',
-}
+import config from '../config.js';
 
 emitter.on('alarm_on', (reason, epaper_message) => {
     if (emitter.listeners('nfc_state_changed').includes(nfc_reader))
@@ -37,7 +34,7 @@ function nfc_reader(state, idle) {
         sensors.nfc_scanner.readerGetTagID(
             (tagType, tagID) => {
                 const tag = tagID.reduce((acc, id) => acc + id.toString(16), '');
-                if (tag in workers) emitter.emit('alarm_off', workers[tag]);
+                if (tag in config.alarm.authorized_nfcs) emitter.emit('alarm_off', config.alarm.authorized_nfcs[tag]);
             },
             console.error.bind('Error while reading nfc tag: '),
         );
