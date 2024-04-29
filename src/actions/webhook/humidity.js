@@ -1,4 +1,5 @@
 import { COLOR, trigger } from './index.js';
+import config from '../../config.js';
 
 /**
  * @param {number|string} value 
@@ -6,7 +7,7 @@ import { COLOR, trigger } from './index.js';
 function high(value) {
     return trigger(
         'Humidity is high!',
-        `Is above 65% - IT'S WET IN HERE`,
+        `Is above ${config.humidity.max}% - IT'S WET IN HERE`,
         [{
             name: "Humidity",
             value: `${value}°C`,
@@ -20,7 +21,7 @@ function high(value) {
 function normalized(value) {
     return trigger(
         'Humidity normalized!',
-        `Is below 65% again - IT'S FINE NOW`,
+        `Is below ${config.humidity.max}% again - IT'S FINE NOW`,
         [{
             name: "Humidity",
             value: `${value}°C`,

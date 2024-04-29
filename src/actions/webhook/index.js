@@ -1,13 +1,12 @@
 import alarm from './alarm.js';
 import temperature from './temperature.js';
 import humidity from './humidity.js';
+import config from '../../humidity.js';
 
 export const COLOR = {
     RED: 15409955,
     GREEN: 48640,
 };
-
-const URL = 'https://discord.com/api/webhooks'
 
 /**
  * @param {string} title title of the incident
@@ -26,7 +25,7 @@ export async function trigger(title, description, fields, color = COLOR.RED) {
         }],
     }
 
-    const response = await fetch(URL, {
+    const response = await fetch(config.alarm.webhook, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
