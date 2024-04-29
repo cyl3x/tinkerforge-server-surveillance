@@ -1,7 +1,7 @@
 import alarm from './alarm.js';
 import temperature from './temperature.js';
 import humidity from './humidity.js';
-import config from '../../humidity.js';
+import config from '../../config.js';
 
 export const COLOR = {
     RED: 15409955,
