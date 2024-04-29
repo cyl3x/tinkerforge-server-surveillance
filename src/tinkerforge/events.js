@@ -1,5 +1,6 @@
 import Tinkerforge from "tinkerforge";
-import { sensors } from "./index.js";
+import { sensors, actors } from "./index.js";
+
 import emitter from "../emitter.js";
 
 // error handler
@@ -23,7 +24,13 @@ sensors.humidity.on(
 );
 
 sensors.nfc_scanner.on(
-    Tinkerforge.BrickletNFC.CALLBACK_READER_STATE_CHANGED,
-    emitter.emit.bind(emitter, 'nfc_state_changed'),
-    emitter.emit.bind(emitter, 'callback_error'),
+  Tinkerforge.BrickletNFC.CALLBACK_READER_STATE_CHANGED,
+  emitter.emit.bind(emitter, "nfc_state_changed"),
+  emitter.emit.bind(emitter, "callback_error")
 );
+
+sensors.rgb_button.on(Tinkerforge.BrickletRGBLEDButton.CALLBACK_BUTTON_STATE_CHANGED, function (state) {
+  if (state === Tinkerforge.BrickletRGBLEDButton.BUTTON_STATE_PRESSED) {
+    emitter.emit("rgb_button_pressed");
+  }
+});
