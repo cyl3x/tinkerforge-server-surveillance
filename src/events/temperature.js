@@ -23,6 +23,6 @@ function waitForNormalize(temp) {
 
   if (convertedTemp >= config.temperature.min && convertedTemp <= config.temperature.max) {
     emitter.off("temperature", waitForNormalize);
-    webhook.humidity.normalized(convertedHumid);
+    webhook.temperature.normalized(convertedTemp);
   }
 }
