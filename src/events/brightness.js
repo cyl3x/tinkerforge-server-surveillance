@@ -7,8 +7,7 @@ emitter.on("brightness", (bright) => {
 })
 
 emitter.on("lights_off", () => {
-    console.log(brightness_lvl);
     if(brightness_lvl > 2000) {
-        webhook.brightness.detect(true);
+        webhook.brightness.left_on();
     }
 })

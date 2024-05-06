@@ -8,7 +8,9 @@ export default {
         max: 65,
         alarm_threshold: 10000, // 10s
     },
-    movement: {},
+    motion: {
+        light_threshold: 10000, // 10s
+    },
     alarm: {
         webhook: 'https://discord.com/api/webhooks',
         authorized_nfcs: {
