@@ -2,6 +2,8 @@ import alarm from './alarm.js';
 import temperature from './temperature.js';
 import humidity from './humidity.js';
 import config from '../../config.js';
+import brightness from './brightness.js';
+
 
 export const COLOR = {
     RED: 15409955,
@@ -53,4 +55,5 @@ export default {
     alarm,
     humidity,
     temperature,
+    brightness,
 }
