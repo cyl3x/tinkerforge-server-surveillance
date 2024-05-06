@@ -23,7 +23,7 @@ function check(temp) {
 function waitForNormalize(temp) {
   var convertedTemp = temp / 100.0;
 
-  if (convertedTemp < config.temperature.min && convertedTemp > config.temperature.max)
+  if (convertedTemp < config.temperature.min || convertedTemp > config.temperature.max)
     return;
 
   emitter.off("temperature", waitForNormalize);

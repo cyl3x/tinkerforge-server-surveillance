@@ -1,7 +1,7 @@
 export default {
     temperature: {
         min: 15,
-        max: 27,
+        max: 30,
         alarm_threshold: 10000, // 10s
     },
     humidity: {
