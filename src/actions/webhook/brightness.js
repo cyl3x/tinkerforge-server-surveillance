@@ -1,17 +1,14 @@
 import { trigger } from "./index.js";
 
-/**
- * @param {boolean} value
- */
-function detect(value) {
+function left_on() {
     return trigger(
         'Light was left on!',
         `Detection after configured Time - SAVE ELECTRICITY AND MONEY`,
         [{
             name: "Light",
-            value: `${value}`,
+            value: 'ON',
         }]
     )
 }
 
-export default { detect };
+export default { left_on };
