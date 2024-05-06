@@ -12,7 +12,7 @@ emitter.on("motion", (motion) => {
     if (!timeout) {
         timeout = setTimeout(() => {
             emitter.emit("lights_off")
-        }, 1000);
+        }, 10000);
         emitter.emit("lights_on");
     }
     console.log(timeout);
