@@ -1,0 +1,237 @@
+<mxfile host="app.diagrams.net" modified="2024-05-06T12:14:09.979Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="KhnR4Ah1VCx5l1UluuRX" version="24.0.5" type="device">
+  <diagram name="Seite-1" id="tG8L6oinTFEvSyYZEetI">
+    <mxGraphModel dx="1236" dy="369" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h24hK0mK38VgUqO8ZtRA-1" target="h24hK0mK38VgUqO8ZtRA-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-1" value="Temperatursensor" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1250" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h24hK0mK38VgUqO8ZtRA-18" target="LHaLxNDRnXquaetzmadl-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="1275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-18" value="&lt;div&gt;Wenn Schwellenwert&lt;/div&gt;&lt;div&gt;erreicht&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="1230" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="h24hK0mK38VgUqO8ZtRA-24" target="LHaLxNDRnXquaetzmadl-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-24" value="Dual Button (1)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1730" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-27" value="1. Modus &lt;br&gt;Temperatur anzeigen" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="360" y="1730" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-31" value="2. Modus&lt;br&gt;Feuchtigkeitslevel anzeigen" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="360" y="1810" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="h24hK0mK38VgUqO8ZtRA-33" target="h24hK0mK38VgUqO8ZtRA-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-33" value="Bewegungsmelder" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1570" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h24hK0mK38VgUqO8ZtRA-35" target="LHaLxNDRnXquaetzmadl-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="475" y="1650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-35" value="Wenn seit 10m keine&lt;br&gt;Bewegung &amp;amp; Licht an" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="200" y="1590" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h24hK0mK38VgUqO8ZtRA-49" edge="1" target="h24hK0mK38VgUqO8ZtRA-55">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="1640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="h24hK0mK38VgUqO8ZtRA-49" target="LHaLxNDRnXquaetzmadl-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="h24hK0mK38VgUqO8ZtRA-49" target="LHaLxNDRnXquaetzmadl-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-49" value="Alarmierung " style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="720" y="1530" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="h24hK0mK38VgUqO8ZtRA-52" target="h24hK0mK38VgUqO8ZtRA-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-52" value="Helligkeitssensor" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1650" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-55" value="Piezo Speaker an" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="900" y="1500" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="LHaLxNDRnXquaetzmadl-2" target="h24hK0mK38VgUqO8ZtRA-69" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="1275" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="h24hK0mK38VgUqO8ZtRA-69">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="1530.625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-38" value="ja" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="LHaLxNDRnXquaetzmadl-36">
+          <mxGeometry x="-0.7998" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="h24hK0mK38VgUqO8ZtRA-69" value="Länger außerhalb&lt;br&gt;Schwellenwert" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="1230" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-1" value="Webhook Alarm" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1610" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-2" value="Webhook Alarm" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1250" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-5" value="Webhook" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-16" target="LHaLxNDRnXquaetzmadl-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="1650" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-11" value="&lt;div align=&quot;left&quot;&gt;&amp;nbsp;&amp;nbsp; Alarm an &amp;lt;Grund&amp;gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1560" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-5" target="LHaLxNDRnXquaetzmadl-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-13" target="LHaLxNDRnXquaetzmadl-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-20" value="nein" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="LHaLxNDRnXquaetzmadl-19">
+          <mxGeometry x="-0.3684" relative="1" as="geometry">
+            <mxPoint x="-1" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-13" target="LHaLxNDRnXquaetzmadl-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-13" target="LHaLxNDRnXquaetzmadl-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-27" value="Ja" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="LHaLxNDRnXquaetzmadl-24">
+          <mxGeometry x="-0.1185" relative="1" as="geometry">
+            <mxPoint y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-13" value="Ist NFC bekannt?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="705" y="1690" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-16" value="NFC Tag reader" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1610" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-21" value="Piezo Speaker an" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1660" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-22" value="Webhook" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="1715" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-25" value="&lt;div align=&quot;left&quot;&gt;&amp;nbsp;&amp;nbsp; Alarm aus &amp;lt;ID, Nutzer&amp;gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1715" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-22" target="LHaLxNDRnXquaetzmadl-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-29" target="LHaLxNDRnXquaetzmadl-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-29" value="Feuchtigkeitssensor" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1370" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-31" target="LHaLxNDRnXquaetzmadl-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="1395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-31" value="&lt;div&gt;Wenn Schwellenwert&lt;/div&gt;&lt;div&gt;erreicht&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1350" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-34" target="LHaLxNDRnXquaetzmadl-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="1395" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-33" target="h24hK0mK38VgUqO8ZtRA-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-39" value="ja" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="LHaLxNDRnXquaetzmadl-35">
+          <mxGeometry x="-0.7209" y="-1" relative="1" as="geometry">
+            <mxPoint x="4" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-33" value="Länger außerhalb&lt;br&gt;Schwellenwert" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1350" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-34" value="Webhook Alarm" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1370" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-40" target="LHaLxNDRnXquaetzmadl-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-40" value="Bewegungssensor" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1490" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-41" target="LHaLxNDRnXquaetzmadl-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-41" value="Wenn außerhalb&lt;br&gt;akzeptabler Uhrzeit" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1470" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-43" target="h24hK0mK38VgUqO8ZtRA-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-43" value="Webhook Alarm" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1490" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-54" target="LHaLxNDRnXquaetzmadl-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-54" value="Dual Button (2)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1810" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-65" target="LHaLxNDRnXquaetzmadl-58">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="1899.7142857142858" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-56" value="RGB Button" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1880" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-58" value="&lt;div&gt;Modi:&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;1 - Temp.,  2 - Feucht., 3 - Lumen&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1880" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-59" target="h24hK0mK38VgUqO8ZtRA-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-59" value="LCD Display" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1730" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-62" target="h24hK0mK38VgUqO8ZtRA-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-62" value="LCD Display" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1810" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-66" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LHaLxNDRnXquaetzmadl-56" target="LHaLxNDRnXquaetzmadl-65">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="1900" as="targetPoint" />
+            <mxPoint x="160" y="1900" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LHaLxNDRnXquaetzmadl-65" value="Seg. Display" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1880" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
