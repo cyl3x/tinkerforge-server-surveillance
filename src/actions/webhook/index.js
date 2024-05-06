@@ -3,6 +3,7 @@ import temperature from './temperature.js';
 import humidity from './humidity.js';
 import config from '../../config.js';
 import brightness from './brightness.js';
+import movement from './movement.js';
 
 
 export const COLOR = {
@@ -56,4 +57,5 @@ export default {
     humidity,
     temperature,
     brightness,
+    movement,
 }

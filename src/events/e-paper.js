@@ -18,8 +18,10 @@ emitter.on('e-paper_add', (epaper_msg) => {
     for (let i = 0; i < epaper_msgs.length; i++) {
         const msg = epaper_msgs[i];
 
+        const x = 296 / 2 - (msg.length * 18 / 2);
+
         actors.epaper.drawText(
-            296 / 2 - (msg.length * 18 / 2),
+            x < 0 ? 0 : x,
             y_start + (i * 24) + (i * 4),
             Tinkerforge.BrickletEPaper296x128.FONT_18X24,
             Tinkerforge.BrickletEPaper296x128.COLOR_WHITE,
