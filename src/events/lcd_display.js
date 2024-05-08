@@ -1,25 +1,29 @@
 import emitter from "../emitter.js";
 import { actors } from "../tinkerforge/index.js";
 
-emitter.on("temperature", writeTemperature);
+emitter.on("temperature", displayTemperature);
 
-emitter.on("change_menu", () => {
-  if (emitter.listeners("temperature").includes(writeTemperature)) {
-    emitter.off("temperature", writeTemperature);
-    actors.lcd_display.clearDisplay();
-    emitter.on("humidity", writeHumidity);
-  } else if (emitter.listeners("humidity").includes(writeHumidity)) {
-    emitter.off("humidity", writeHumidity);
-    actors.lcd_display.clearDisplay();
-    emitter.on("temperature", writeTemperature);
+emitter.on("lcd_show_temperature", () => {
+  if (emitter.listeners("humidity").includes(displayHumidity)) {
+    emitter.off("humidity", displayHumidity);
   }
+  actors.lcd_display.clearDisplay();
+  emitter.on("temperature", displayTemperature);
+});
+
+emitter.on("lcd_show_humidity", () => {
+  if (emitter.listeners("temperature").includes(displayTemperature)) {
+    emitter.off("temperature", displayTemperature);
+  }
+  actors.lcd_display.clearDisplay();
+  emitter.on("humidity", displayHumidity);
 });
 
 const temps = { min: 100, max: 0 };
 
-function writeTemperature(temp) {
-  if (temp / 100 < temps.min) temps.min = temp / 100
-  else if (temp / 100 > temps.max) temps.max = temp / 100
+function displayTemperature(temp) {
+  if (temp / 100 < temps.min) temps.min = temp / 100;
+  if (temp / 100 > temps.max) temps.max = temp / 100;
 
   actors.lcd_display.writeLine(0, 0, "TEMPERATURE");
   actors.lcd_display.writeLine(1, 0, `Current ${temp / 100}`);
@@ -27,6 +31,15 @@ function writeTemperature(temp) {
   actors.lcd_display.writeLine(3, 0, `Maximal ${temps.max}`);
 }
 
-function writeHumidity(humid) {
-  actors.lcd_display.writeLine(0, 0, `Humidity JL : ${humid / 100}`);
+const humids = { min: 100, max: 0 };
+
+function displayHumidity(humid) {
+  humids.max = humid / 100;
+  if (humid / 100 < humids.min) humids.min = humid / 100;
+  if (humid / 100 > humids.max) humids.max = humid / 100;
+
+  actors.lcd_display.writeLine(0, 0, `HUMIDITY`);
+  actors.lcd_display.writeLine(1, 0, `Current ${humid / 100}`);
+  actors.lcd_display.writeLine(2, 0, `Minimal ${humids.min}`);
+  actors.lcd_display.writeLine(3, 0, `Maximal ${humids.max}`);
 }

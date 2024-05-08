@@ -7,3 +7,4 @@ import "./lcd_display.js";
 import "./brightness.js";
 import "./motion.js";
 import "./e-paper.js";
+import "./dual_button.js";
