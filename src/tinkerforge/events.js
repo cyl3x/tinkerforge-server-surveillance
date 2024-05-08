@@ -1,5 +1,5 @@
 import Tinkerforge from "tinkerforge";
-import { sensors, actors } from "./index.js";
+import { sensors } from "./index.js";
 
 import emitter from "../emitter.js";
 
