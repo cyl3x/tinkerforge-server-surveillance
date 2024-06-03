@@ -11,13 +11,15 @@ export default {
         alarm_threshold: 10000, // 10s
     },
     movement: {
-        start: 6,
-        end: 21
+        start_hour: 21,
+        end_hour: 6
     },
     motion: {
         light_threshold: 10000, // 10s
     },
     brightness:{
+        start_hour: 21,
+        end_hour: 6,
         light_level: 2000, //lumen
     },
     alarm: {

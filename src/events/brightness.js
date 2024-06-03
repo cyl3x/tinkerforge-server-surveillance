@@ -8,7 +8,12 @@ emitter.on("brightness", (bright) => {
 })
 
 emitter.on("lights_off", () => {
-    if(brightness_lvl > config.brightness.light_level) {
+    if (brightness_lvl > config.brightness.light_level && isInBetweenHours) {
         webhook.brightness.left_on();
     }
 })
+
+function isInBetweenHours() {
+    let currentHours = (new Date()).getHours();
+    return currentHours > config.brightness.start_hour || currentHours <= config.brightness.end_hour;
+}
