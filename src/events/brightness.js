@@ -1,4 +1,5 @@
 import webhook from "../actions/webhook/index.js";
+import config from '../config.js';
 import emitter from "../emitter.js";
 
 let brightness_lvl = null;
@@ -7,7 +8,7 @@ emitter.on("brightness", (bright) => {
 })
 
 emitter.on("lights_off", () => {
-    if(brightness_lvl > 2000) {
+    if(brightness_lvl > config.brightness.light_level) {
         webhook.brightness.left_on();
     }
 })

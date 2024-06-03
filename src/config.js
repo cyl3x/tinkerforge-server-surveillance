@@ -1,3 +1,5 @@
+import brightness from "./actions/webhook/brightness";
+
 export default {
     temperature: {
         min: 15,
@@ -14,6 +16,9 @@ export default {
     },
     motion: {
         light_threshold: 10000, // 10s
+    },
+    brightness:{
+        light_level: 2000, //lumen
     },
     alarm: {
         webhook: 'https://discord.com/api/webhooks',
