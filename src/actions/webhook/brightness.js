@@ -11,4 +11,15 @@ function left_on() {
     )
 }
 
-export default { left_on };
+function normalized() {
+    return trigger(
+        'Light was finally turned off!',
+        `NOW WE CAN SAVE MONEY`,
+        [{
+            name: "Light",
+            value: 'ON',
+        }]
+    )
+}
+
+export default { left_on, normalized };

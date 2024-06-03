@@ -4,20 +4,16 @@ import emitter from "../emitter.js";
 
 let timeout = null;
 emitter.on("motion", () => {
-    if(timeout) {
+    if (timeout) {
         clearTimeout(timeout);
         timeout = null;
     }
 
-    if (!timeout) {
-        timeout = setTimeout(() => {
-            emitter.emit("lights_off")
-        }, config.motion.light_threshold);
+    timeout ??= setTimeout(() => {
+        emitter.emit("lights_off")
+    }, config.motion.light_threshold);
 
-        emitter.emit("lights_on");
-    }
-
-    if(isInBetweenHours) {
+    if (isInBetweenHours()) {
         webhook.movement.detect(true);
         emitter.emit("alarm_on", "UNAUTHORIZED");
     }

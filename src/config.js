@@ -1,5 +1,3 @@
-import brightness from "./actions/webhook/brightness";
-
 export default {
     temperature: {
         min: 15,
