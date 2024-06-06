@@ -4,6 +4,10 @@ import Tinkerforge from 'tinkerforge';
 
 let epaper_msgs = [];
 
+/**
+ * Add a persistant message to the e-paper display.
+ * Can show multiple messages at once.
+ */
 emitter.on('e-paper_add', (epaper_msg) => {
     if (!epaper_msg) {
         return void console.log('No message to display!')
@@ -33,6 +37,9 @@ emitter.on('e-paper_add', (epaper_msg) => {
     actors.epaper.draw();
 });
 
+/**
+ * Clear all messages from the e-paper display.
+ */
 emitter.on('e-paper_clear', () => {
     if (epaper_msgs.length === 0) return;
 

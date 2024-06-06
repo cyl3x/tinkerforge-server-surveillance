@@ -4,6 +4,10 @@ import config from '../config.js';
 
 emitter.on('humidity', check);
 
+/**
+ * Sends an alert if the humidity is outside a given range.
+ * Starts waiting for the humidity to normalize.
+ */
 function check(humidity) {
     var convertedHumid = humidity / 100.0;
   
@@ -15,6 +19,9 @@ function check(humidity) {
     }
 }
 
+/**
+ * Sends an all-clear alert when the humidity is back to normal.
+ */
 function waitForNormalize() {
   var convertedHumid = humidity / 100.0;
 

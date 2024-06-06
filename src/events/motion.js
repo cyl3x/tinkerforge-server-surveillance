@@ -3,7 +3,10 @@ import config from '../config.js';
 import emitter from "../emitter.js";
 
 let timeout = null;
-emitter.on("motion", () => {
+
+/**
+ * Triggers an alert if motion is detected between a given time frame.
+ */
     if (timeout) {
         clearTimeout(timeout);
         timeout = null;

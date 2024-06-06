@@ -3,17 +3,17 @@ import { actors } from "../tinkerforge/index.js";
 
 emitter.on("temperature", displayTemperature);
 
-emitter.on("lcd_show_temperature", () => {
-  if (emitter.listeners("humidity").includes(displayHumidity)) {
-    emitter.off("humidity", displayHumidity);
+/**
+ * Changes the lcd display to temperature mode.
+ */
   }
   actors.lcd_display.clearDisplay();
   emitter.on("temperature", displayTemperature);
 });
 
-emitter.on("lcd_show_humidity", () => {
-  if (emitter.listeners("temperature").includes(displayTemperature)) {
-    emitter.off("temperature", displayTemperature);
+/**
+ * Changes the lcd display to humidity mode.
+ */
   }
   actors.lcd_display.clearDisplay();
   emitter.on("humidity", displayHumidity);

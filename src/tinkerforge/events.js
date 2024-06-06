@@ -5,7 +5,7 @@ import emitter from "../emitter.js";
 
 // error handler
 emitter.on("callback_error", (error) => {
-  console.log(`Error receiving data: ${String(error)}`);
+  console.trace(`Sensor returned an error: ${String(error)}`);
 });
 // error handler
 

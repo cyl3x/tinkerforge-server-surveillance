@@ -6,6 +6,9 @@ import config from '../config.js';
 
 const alarmState = {};
 
+/**
+ * Tigger an alert after a given time has passed without the alarm being turned off.
+ */
 emitter.on('alarm_on_threshold', (id, reason, threshold) => {
     if (!!alarmState[id]) clearTimeout(alarmState[id]);
 
@@ -14,6 +17,9 @@ emitter.on('alarm_on_threshold', (id, reason, threshold) => {
     }, threshold);
 });
 
+/**
+ * Cancels the alert if the alarm is turned off before the time has passed.
+ */
 emitter.on('alarm_off_threshold', (id) => {
     if (!alarmState[id]) return;
 
@@ -22,6 +28,9 @@ emitter.on('alarm_off_threshold', (id) => {
     emitter.emit('alarm_off', `EVENT(${id})`);
 });
 
+/**
+ * Turns the alarm on and starts listening for NFC tags.
+ */
 emitter.on('alarm_on', (reason) => {
     emitter.emit('e-paper_add', reason);
 
@@ -38,6 +47,9 @@ emitter.on('alarm_on', (reason) => {
     actors.piezo.setAlarm(800, 2000, 10, 1, /* volume */ 1, 4294967295);
 });
 
+/**
+ * Turns the alarm off and clears the e-paper display.
+ */
 emitter.on('alarm_off', (username) => {
     emitter.emit('e-paper_clear');
 
@@ -56,6 +68,9 @@ emitter.on('alarm_off', (username) => {
     actors.piezo.setAlarm(800, 2000, 10, 1, /* volume */ 1, 0);
 });
 
+/**
+ * Reads the NFC tag and turns the alarm off if the tag is authorized.
+ */
 function nfc_reader(state, idle) {
     if(state === Tinkerforge.BrickletNFC.READER_STATE_REQUEST_TAG_ID_READY) {
         sensors.nfc_scanner.readerGetTagID(

@@ -4,6 +4,10 @@ import config from "../config.js";
 
 emitter.on("temperature", check);
 
+/**
+ * Sends an alert if the temperature is outside a given range.
+ * Starts waiting for the temperature to normalize.
+ */
 function check(temp) {
   var convertedTemp = temp / 100.0;
 
@@ -11,15 +15,18 @@ function check(temp) {
     webhook.temperature.low(convertedTemp);
     emitter.off("temperature", check);
     emitter.on("temperature", waitForNormalize);
-    emitter.emit('alarm_on_threshold', 'temperature', "UNDERHEAT", config.temperature.alarm_threshold);
+    emitter.emit('alarm_on_threshold', 'temperature', 'UNDERHEAT', config.temperature.alarm_threshold);
   } else if (convertedTemp > config.temperature.max) {
     webhook.temperature.high(convertedTemp);
     emitter.off("temperature", check);
     emitter.on("temperature", waitForNormalize);
-    emitter.emit('alarm_on_threshold', 'temperature', "OVERHEAT", config.temperature.alarm_threshold);
+    emitter.emit('alarm_on_threshold', 'temperature', 'OVERHEAT', config.temperature.alarm_threshold);
   }
 }
 
+/**
+ * Sends an all-clear alert when the temperature is back to normal.
+ */
 function waitForNormalize(temp) {
   var convertedTemp = temp / 100.0;
 

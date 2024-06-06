@@ -1,10 +1,14 @@
-import "./alarm.js";
-import "./display_seg.js";
-import "./temperature.js";
-import "./humidity.js";
-import "./rgb_button.js";
-import "./lcd_display.js";
-import "./brightness.js";
-import "./motion.js";
-import "./e-paper.js";
-import "./dual_button.js";
+/**
+ * Each processor module for a sensor is imported.
+ */
+
+import './alarm.js';
+import './brightness.js';
+import './display_seg.js';
+import './dual_button.js';
+import './e-paper.js';
+import './humidity.js';
+import './lcd_display.js';
+import './motion.js';
+import './rgb_button.js';
+import './temperature.js';

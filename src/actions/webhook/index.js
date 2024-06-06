@@ -12,9 +12,12 @@ export const COLOR = {
 };
 
 /**
- * @param {string} title title of the incident
- * @param {string} description why the incident was triggered (e.g. Temperature above 30°C)
+ * Send a formatted alert to the configured discord webhook.
+ * 
+ * @param {string} title title of the alert
+ * @param {string} description why the alert was triggered (e.g. Temperature above 30°C)
  * @param {array<{ name: string, value: string }>} fields
+ * @param {number} color color of the alert
  */
 export async function trigger(title, description, fields, color = COLOR.RED) {
     console.log(`Triggered webhook: ${title} - ${description}`);

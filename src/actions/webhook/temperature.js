@@ -37,7 +37,7 @@ function normalized(value) {
         'Temperature is normal again!',
         `Is between ${config.temperature.min}°C and ${config.temperature.max}°C - IT'S FINE NOW`,
         [{
-            name: "Temperature",
+            name: 'Temperature',
             value: `${value}°C`,
         }]
     );
