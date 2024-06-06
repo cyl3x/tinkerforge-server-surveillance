@@ -1,13 +1,13 @@
-import webhook from "../actions/webhook/index.js";
+import webhook from '../actions/webhook/index.js';
 import config from '../config.js';
-import emitter from "../emitter.js";
+import emitter from '../emitter.js';
 
 let brightness_lvl = null;
-emitter.on("brightness", (bright) => {
+emitter.on('brightness', (bright) => {
     brightness_lvl = bright;
 })
 
-emitter.on("lights_off", lights_off)
+emitter.on('lights_off', lights_off)
 
 /**
  * Triggers an alert if the light is on between a given time frame.
@@ -15,9 +15,9 @@ emitter.on("lights_off", lights_off)
  */
 function lights_off() {
     if (brightness_lvl > config.brightness.light_level && isInBetweenHours()) {
-        emitter.off("lights_off", lights_off)
-        emitter.off("brightness", waitForNormalize)
-        webhook.brightness.left_on();
+        emitter.off('lights_off', lights_off)
+        emitter.off('brightness', waitForNormalize)
+        webhook.brightness.left_on(brightness_lvl);
     }
 }
 
@@ -26,11 +26,11 @@ function lights_off() {
  */
 function waitForNormalize(brightness_lvl) {
     if (brightness_lvl <= config.brightness.light_level) {
-        emitter.off("brightness", waitForNormalize);
-        emitter.on("lights_off", lights_off);
-        webhook.brightness.normalized(convertedTemp);
+        emitter.off('brightness', waitForNormalize);
+        emitter.on('lights_off', lights_off);
+        webhook.brightness.normalized(brightness_lvl);
     }
-  }
+}
 
 /**
  * @returns {boolean} true if the current time is within the configured time frame.

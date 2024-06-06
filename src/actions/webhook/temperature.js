@@ -9,7 +9,7 @@ function high(value) {
         'Temperature is rising!',
         `Is above ${config.temperature.max}°C - IT'S HOT IN HERE`,
         [{
-            name: "Temperature",
+            name: 'Temperature',
             value: `${value}°C`,
         }]
     );
@@ -23,7 +23,7 @@ function low(value) {
         'Temperature is falling!',
         `Is below ${config.temperature.min}°C - IT'S COLD IN HERE`,
         [{
-            name: "Temperature",
+            name: 'Temperature',
             value: `${value}°C`,
         }]
     );

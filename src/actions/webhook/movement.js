@@ -6,9 +6,9 @@ import { trigger } from './index.js';
 function detect(value) {
     return trigger(
         'Movement was detected!',
-        `Detection after permited Time - SOMETHING IS CRAWLING IN THE DARK`,
+        'Detection after permited Time - SOMETHING IS CRAWLING IN THE DARK',
         [{
-            name: "Movement",
+            name: 'Movement',
             value: `${value}`,
         }]
     );

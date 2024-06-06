@@ -1,5 +1,5 @@
-import webhook from "../actions/webhook/index.js";
-import emitter from "../emitter.js";
+import webhook from '../actions/webhook/index.js';
+import emitter from '../emitter.js';
 import config from '../config.js';
 
 emitter.on('humidity', check);
@@ -15,7 +15,7 @@ function check(humidity) {
       emitter.off('humidity', check);
       emitter.on('humidity', waitForNormalize);
       webhook.humidity.high(convertedHumid);
-      emitter.emit('alarm_on_threshold', 'humidity', "MOISTURE", config.humidity.alarm_threshold)
+      emitter.emit('alarm_on_threshold', 'humidity', 'MOISTURE', config.humidity.alarm_threshold)
     }
 }
 

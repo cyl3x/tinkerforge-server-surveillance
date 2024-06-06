@@ -9,7 +9,7 @@ function high(value) {
         'Humidity is high!',
         `Is above ${config.humidity.max}% - IT'S WET IN HERE`,
         [{
-            name: "Humidity",
+            name: 'Humidity',
             value: `${value}°C`,
         }]
     );
@@ -23,7 +23,7 @@ function normalized(value) {
         'Humidity normalized!',
         `Is below ${config.humidity.max}% again - IT'S FINE NOW`,
         [{
-            name: "Humidity",
+            name: 'Humidity',
             value: `${value}°C`,
         }],
         COLOR.GREEN,

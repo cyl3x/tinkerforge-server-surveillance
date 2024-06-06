@@ -9,7 +9,7 @@ const IP = '172.20.10.242';
  */
 function createIPcon() {
     const ipcon = new Tinkerforge.IPConnection();
-    ipcon.connect(IP, 4223, (error) => console.error(`Could not connect to ${IP}:4223, code ${error}`));
+    ipcon.connect(IP, 4223, (error) => console.trace(`Could not connect to ${IP}:4223, code ${error}`));
 
     ['exit', 'SIGINT', 'SIGUSR1', 'SIGUSR2', 'SIGTERM'].forEach((e) => {
         process.on(e, () => {

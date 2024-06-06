@@ -6,7 +6,7 @@ import { trigger } from "./index.js";
 function left_on() {
     return trigger(
         'Light was left on!',
-        `Detection after configured Time - SAVE ELECTRICITY AND MONEY`,
+        'Detection after configured Time - SAVE ELECTRICITY AND MONEY',
         [{
             name: 'Brightness Level',
             value: 'ON',
@@ -20,10 +20,10 @@ function left_on() {
 function normalized() {
     return trigger(
         'Light was finally turned off!',
-        `NOW WE CAN SAVE MONEY`,
+        'NOW WE CAN SAVE MONEY',
         [{
             name: 'Brightness Level',
-            value: "Off",
+            value: 'Off',
         }],
     )
 }

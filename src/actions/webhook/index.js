@@ -5,7 +5,6 @@ import config from '../../config.js';
 import brightness from './brightness.js';
 import movement from './movement.js';
 
-
 export const COLOR = {
     RED: 15409955,
     GREEN: 48640,
@@ -40,7 +39,7 @@ export async function trigger(title, description, fields, color = COLOR.RED) {
     });
 
     if (!response.ok) {
-        console.error(
+        console.trace(
             `Error sending webhook (${response.status}): ${await response.text()}`,
         );
 
@@ -54,7 +53,6 @@ export async function trigger(title, description, fields, color = COLOR.RED) {
  * 
  * actions.temperature.high(30);
  */
-
 export default {
     alarm,
     humidity,
