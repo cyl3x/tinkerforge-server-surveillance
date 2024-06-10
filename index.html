@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Config editor - Server surveillance</title>
+
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        fieldset {
+            display: flex;
+            max-width: 100px;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        label {
+            margin-bottom: -10px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+    </style>
+  </head>
+    <fieldset style='margin: 16px;'>
+        <legend>Import/Export config</legend>
+        <input type='file' name='import' />
+
+        <button id='export'>
+            Export
+        </button>
+    </fieldset>
+
+    <form>
+        <fieldset>
+            <legend>Temperature</legend>
+            <label for='temperature.min' >
+                Min
+            </label>
+            <input name='temperature.min' value='0' />
+
+            <label for='temperature.max' >
+                Max
+            </label>
+            <input name='temperature.max' value='0' />
+
+            <label for='temperature.max' >
+                Alarm threshold
+            </label>
+            <input name='temperature.alarm_threshold' value='0' />
+        </fieldset>
+
+        <fieldset>
+            <legend>Humidity</legend>
+            <label for='humidity.min' >
+                Min
+            </label>
+            <input name='humidity.min' value='0' />
+
+            <label for='humidity.max' >
+                Max
+            </label>
+            <input name='humidity.max' value='0' />
+
+            <label for='humidity.alarm_threshold' >
+                Alarm threshold
+            </label>
+            <input name='humidity.alarm_threshold' value='0' />
+        </fieldset>
+
+        <fieldset>
+            <legend>Movement</legend>
+            <label for='movement.start_hour' >
+                Start hour
+            </label>
+            <input name='movement.start_hour' value='0' />
+
+            <label for='movement.end_hour' >
+                End hour
+            </label>
+            <input name='movement.end_hour' value='0' />
+        </fieldset>
+
+        <fieldset>
+            <legend>Motion</legend>
+            <label for='motion.light_threshold' >
+                Light threshold
+            </label>
+            <input name='motion.light_threshold' value='0' />
+        </fieldset>
+
+        <fieldset>
+            <legend>Brightness</legend>
+            <label for='brightness.start_hour' >
+                Start hour
+            </label>
+            <input name='brightness.start_hour' value='0' />
+
+            <label for='brightness.end_hour' >
+                End hour
+            </label>
+            <input name='brightness.end_hour' value='0' />
+
+            <label for='brightness.light_level' >
+                Light level
+            </label>
+            <input name='brightness.light_level' value='0' />
+        </fieldset>
+
+        <fieldset>
+            <legend>Alarm</legend>
+            <label for='alarm.webhook' >
+                Webhook
+            </label>
+            <input name='alarm.webhook' value='0' />
+        </fieldset>
+
+        <fieldset>
+            <legend>NFC Reader</legend>
+            <label for='nfc_reader.always_log'>
+                Always log
+            </label>
+            <input type='checkbox' name='nfc_reader.always_log' value='true' />
+        </fieldset>
+    </form>
+
+    <a id='download' style='display: hidden;'>
+    </a>
+  </body>
+
+  <script>
+    const form = document.querySelector('form');
+    const importInput = document.querySelector('input[name="import"]');
+    const exportButton = document.querySelector('#export');
+    const downloadLink = document.querySelector('#download');
+
+    let config = {};
+    let file = null;
+
+    function flatten(obj, prefix = '') {
+        return Object.keys(obj).reduce((acc, key) => {
+            const value = obj[key];
+            const newKey = prefix ? `${prefix}.${key}` : key;
+
+            if (typeof value === 'object') {
+                return {
+                    ...acc,
+                    ...flatten(value, newKey),
+                };
+            }
+
+            return {
+                ...acc,
+                [newKey]: value,
+            };
+        }, {});
+    }
+
+    importInput.addEventListener('change', async (event) => {
+        file = event.target.files[0];
+        config = JSON.parse(await file.text());
+        const flatConfig = flatten(config);
+
+        Object.keys(flatConfig).forEach((key) => {
+            const input = form.querySelector(`input[name="${key}"]`);
+
+            if (input && typeof flatConfig[key] === 'boolean') {
+                input.checked = flatConfig[key];
+            } else if (input) {
+                input.value = flatConfig[key];
+            }
+        });
+    });
+
+    exportButton.addEventListener('click', async () => {
+        const formData = new FormData(form);
+        const importedConfig = structuredClone(config);
+
+        // Convert 'config.some-key.max': 30' to {config: {some-key: {max: 30 }}}
+        for (const [path, value] of formData.entries()) {
+            console.log(`parse ${path}: ${value}`);
+            const keys = path.split('.');
+            const lastKey = keys.pop();
+            let current = importedConfig;
+
+            keys.forEach((key) => {
+                if (!current[key]) {
+                    current[key] = {};
+                }
+
+                current = current[key];
+            });
+
+            if (value === 'true') {
+                current[lastKey] = true;
+            } else if (!Number.isNaN(Number.parseInt(value))) {
+                current[lastKey] = Number.parseInt(value);
+            } else {
+                current[lastKey] = value;
+            }
+        }
+
+        console.log(importedConfig);
+        
+        const blob = new Blob([JSON.stringify(importedConfig, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        downloadLink.href = url;
+        downloadLink.download = file?.name || 'config.json';
+        downloadLink.click();
+    });
+  </script>
+</html>
