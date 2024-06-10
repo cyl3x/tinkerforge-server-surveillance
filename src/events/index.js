@@ -10,5 +10,6 @@ import './e-paper.js';
 import './humidity.js';
 import './lcd_display.js';
 import './motion.js';
+import './nfc_reader.js';
 import './rgb_button.js';
 import './temperature.js';

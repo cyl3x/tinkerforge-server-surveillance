@@ -27,4 +27,7 @@ export default {
             b7944dc7: 'The Church',
         }
     },
+    nfc_reader: {
+        always_log: false,
+    }
 }
