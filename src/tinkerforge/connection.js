@@ -23,7 +23,10 @@ function createIPcon() {
     return new Promise((resolve) => {
         ipcon.on(
             Tinkerforge.IPConnection.CALLBACK_CONNECTED,
-            () => resolve(ipcon),
+            () => {
+                console.log('Init: Connection established!');
+                resolve(ipcon)
+            },
         );
     });
 };
